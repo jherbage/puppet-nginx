@@ -16,7 +16,7 @@ http {
 
   access_log  <%= @log_dir %>/access.log;
 
-  send_file on;
+  sendfile on;
   # tcp_nopush on;
   tcp_nodelay on;
 
