@@ -58,6 +58,7 @@ class nginx(
   String $service_pattern,
   String $service_ensure,
   String $service_name,
+  String $vhost_dir,
   Boolean $service_enable,
   Boolean $service_hasstatus,
   Boolean $service_hasrestart,

@@ -7,7 +7,7 @@ function nginx::data() {
     'nginx::config_mode'   => '0664',
     'nginx::config_owner'  => 'root',
     'nginx::config_group'  => 'root',
-    'nginx::config_confd'  => "${config_dir}/conf.d",
+    'nginx::config_confd'  => "/etc/nginx/conf.d",
     'nginx::config_log_dir' => '/var/log/nginx',
     'nginx::config_pid_file' => 'run/nginx.pid',
 
@@ -22,7 +22,7 @@ function nginx::data() {
 }
 
     $config_vdir_enable = $facts['os']['family'] ? {
-      'Debian' => $config_dir,
+      'Debian' => $base_params['nginx::config_confd'],
       default  => undef,
     }
  
@@ -32,8 +32,8 @@ function nginx::data() {
     }
 
     $vhost_dir = $facts['os']['family'] ? {
-      'Debian' => "${config_dir}/sites-enabled",
-      default  => $base_params['nx::config_confd']
+      'Debian' => "$base_params['nginx::config_dir']/sites-enabled",
+      default  => $base_params['nginx::config_confd']
     }
 
     $extra_params = {
