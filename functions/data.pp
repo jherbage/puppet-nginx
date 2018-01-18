@@ -33,7 +33,7 @@ function nginx::data() {
 
     $vhost_dir = $facts['os']['family'] ? {
       'Debian' => "${config_dir}/sites-enabled",
-      default  => $config_confd,
+      default  => $base_params['nx::config_confd']
     }
 
     $extra_params = {
