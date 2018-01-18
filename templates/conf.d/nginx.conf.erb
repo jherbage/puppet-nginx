@@ -22,6 +22,6 @@ http {
 
   include <%= @confd %>/*.conf;
 <% if @vdir_enable %>
-  include <%= @vdir_enable %>/;
+  include <%= @vdir_enable %>/*;
 <% end %>
 }
