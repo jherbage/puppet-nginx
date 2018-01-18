@@ -3,7 +3,7 @@
 server {
   listen <%= @port %>;
   root <%= @vhost_docroot %>;
-  server_name <%= @name %> <%= @serveraliases %>;
+  server_name <%= @name %> <%= @server_aliases %>;
 
   access_log <%= @log_dir %>/<%= @name %>.access.log;
   error_log <%= @log_dir %>/<%= @name %>.error.log;
