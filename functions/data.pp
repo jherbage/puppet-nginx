@@ -1,6 +1,6 @@
 function nginx::data() {
   $base_params = {
-    'nginx::$ensure'        => 'present',
+    'nginx::ensure'        => 'present',
     'nginx::package_name'  => 'nginx',
     'nginx::config_dir'    => '/etc/nginx',
     'nginx::config_ensure' => 'file',
