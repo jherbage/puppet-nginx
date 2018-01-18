@@ -9,7 +9,7 @@ function nginx::data() {
     'nginx::config_group'  => 'root',
     'nginx::config_confd'  => "/etc/nginx/conf.d",
     'nginx::config_log_dir' => '/var/log/nginx',
-    'nginx::config_pid_file' => 'run/nginx.pid',
+    'nginx::config_pid_file' => '/run/nginx.pid',
 
     'nginx::service_name' => 'nginx',
     'nginx::service_ensure' => 'running',
